@@ -1,17 +1,29 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.print("Bir sayı girin: ");
+        int n = scanner.nextInt();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        int sum = 0;
+        int count = 0;
+
+        for (int i = 0; i <= n; i++) {
+            if (i % 3 == 0 && i % 4 == 0) {
+                sum += i;
+                count++;
+            }
+        }
+        System.out.println("sum: " + sum);
+        System.out.println("count: " + count);
+
+        if (count > 0) {
+            int average = sum / count;
+            System.out.println("0'dan " + n + "'e kadar 3 ve 4'e tam bölünen sayıların ortalaması: " + average);
+        } else {
+            System.out.println("0'dan " + n + "'e kadar 3 ve 4'e tam bölünen sayı bulunamadı.");
         }
     }
 }
